@@ -148,5 +148,63 @@ def getAllExecutedActions(startdate, enddate, filename):
             actionList = post_json_from_url_turbo(actionURLEndpoint, actionPayload)
             
         
-        if not 
-      
+        if not actionList:
+            break
+        
+        for action in actionList:
+            entitytype = action['target']['className']
+            actiontype = action['actionType']
+            
+            try:
+                details =  action['details']
+            
+            
+            except KeyError:
+                details = "N/A"
+            
+            try:
+                XPCA = action['target']['tags']['xp-cost-allocation'][0]
+            
+            except: 
+                resourcegroup = "NA"
+            
+            action_time - action['updateTime']
+            
+            mode = action['actionMode']
+            
+            userName =  action['userName']
+            
+            category = action['risk']['subCategory']
+            
+            accountName = (details.split(''))[-1].strip()
+            
+            try:
+                entityname = action['target']['displayName']
+            
+            except:
+                
+                entityname = "VOLUME SEM NOME DEFINIDO "              
+            
+            try:
+                saving = float(action['stats'][0]['value'])
+            
+            except (KeyError, IndexError, ValueError):
+                saving = 0.0
+            
+            savingmensal = 0.0
+            
+            csv_writer.writerow([action_time, entitytype, actiontype, entityname, details, accountName, resourcegroup, category, ])
+            
+                
+            
+            
+            
+            
+            
+                           
+                           
+                           
+                           
+
+            
+                 
