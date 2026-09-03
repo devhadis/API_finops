@@ -26,8 +26,8 @@ requests.packages.urllib3.disable_warnings()
 urllib3.disable_warnings(urllib3.exception.InsecureRequestWarning)
 
 turbo_ip = ""
-userName = ""    #"turboscript"
-password = ""    #"Scaleup@2026"
+userName = ""    
+password = ""    
 
 
 
